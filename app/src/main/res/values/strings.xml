@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DIP</string>
+    <string name="choose_file">Choose image</string>
+    <string name="draw_histogram">Draw histogram</string>
+
+    <string name="dialog_wait">Please wait</string>
+
+    <string name="folder_back">Back to parent folder</string>
+    <string name="select_image">Select image</string>
+</resources>

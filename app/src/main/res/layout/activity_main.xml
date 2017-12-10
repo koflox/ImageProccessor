@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.koflox.dip.activities.MainActivity">
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_toRightOf="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_file"/>
+
+    <Button
+        android:id="@+id/btn_histogram"
+        android:layout_toRightOf="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_histogram"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="contrast"/>
+        <Button
+            android:id="@+id/btn_bright_pick"
+            android:layout_toRightOf="@+id/btn_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pick"/>
+        <LinearLayout
+            android:layout_toRightOf="@+id/btn_bright_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_medium">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max: "
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/tv_bright_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Min: "
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/tv_bright_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_smooth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Smooth"/>
+
+    <Button
+        android:id="@+id/btn_sharp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sharp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_edges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edges"/>
+        <Button
+            android:id="@+id/btn_limit_pick"
+            android:layout_toRightOf="@+id/btn_edges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pick"/>
+        <LinearLayout
+            android:layout_toRightOf="@+id/btn_limit_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_medium">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Limit: "
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/tv_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_paster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Poster"/>
+        <Button
+            android:id="@+id/btn_level_pick"
+            android:layout_toRightOf="@+id/btn_paster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pick"/>
+        <LinearLayout
+            android:layout_toRightOf="@+id/btn_level_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_medium">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level: "
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitStart"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_medium"/>
+
+            <ImageView
+                android:id="@+id/iv_rgb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_medium"/>
+
+            <ImageView
+                android:id="@+id/iv_lum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_medium"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
